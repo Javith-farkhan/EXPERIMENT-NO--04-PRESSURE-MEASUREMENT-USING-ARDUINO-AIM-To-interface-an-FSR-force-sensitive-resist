@@ -104,5 +104,5 @@ void loop()
 ```
 ### output
 
-![git](./robotics ex 4)
+![git](./robotics ex 4.png)
 ### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
