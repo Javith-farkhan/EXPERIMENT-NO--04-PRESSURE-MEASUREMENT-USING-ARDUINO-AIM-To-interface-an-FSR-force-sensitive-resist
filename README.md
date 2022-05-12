@@ -76,43 +76,33 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+```
+#define echopin 9  
+#define trigpin 10 
+long duration;
+int distance;
 
-![image](https://user-images.githubusercontent.com/36288975/163533136-5f8d00f2-8456-4d46-b243-d94d45f83eee.png)
+void setup()
+{
+  pinMode(trigpin, OUTPUT);
+  pinMode(echopin, INPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  digitalWrite(trigpin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(echopin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigpin, LOW);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print("Distance;");
+  Serial.print(distance);
+  Serial.println(" cm");
+}
+```
+### output
 
-### TABLE -02 OUTPUT VOLTAGES AND CHANGE IN RESISTANCES
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![git](./robotics ex 4)
 ### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
